@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  font-family: Garamond, serif;
+  background-repeat: no-repeat;
+  background-image: url("https://jsd.cdn.zzko.cn/gh/zealvita/picx-images-hosting@master/gallery/mapEN.webp");  
+  background-size: 100%, auto;  
+  min-height: 100%;
+}  
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #462b1c;
+  color: white;
+  font-size: 70%
+}
+
+.modal-body {padding: 2px 16px; font-size: 15px}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #462b1c;
+  color: white;
+}
+       .anybutton {
+       position: absolute;
+       background: transparent; 
+       color: transparent;
+     outline: none;
+       border: none;
+       }
+       .anybutton:hover {
+           background: white;
+           opacity: 0.4; 
+}
+</style>
+</head>
+<body>
+<!-- Trigger/Open The Modal -->
+
+<a href="javascript: changeText(1);">
+    <button id="myBtn1" class="anybutton" style="width:11%; height:3%; top: 8%; left:26%">SnowyMountain</button>
+</a>
+<a href="javascript: changeText(2);">
+    <button id="myBtn2" class="anybutton" style="width:9%; height:4%; top: 24%; left:53.5%">DragonsLair</button>
+</a>
+<a href="javascript: changeText(3);">
+    <button id="myBtn3" class="anybutton" style="width:19%; height:3%; top: 30.5%; left:74%">Ravencliff</button>
+</a>
+<a href="javascript: changeText(4);">
+    <button id="myBtn4" class="anybutton" style="width:17%; height:5%; top: 32%; left:27%">Capital</button>
+</a>
+<a href="javascript: changeText(5);">
+    <button id="myBtn5" class="anybutton" style="width:10%; height:2.5%; top: 49.5%; left:30.5%">SWAMPS</button>
+</a>
+<a href="javascript: changeText(6);">
+    <button id="myBtn6" class="anybutton" style="width:10%; height:2%; top: 50.5%; left:68%">ALGONIA</button>
+</a>
+<a href="javascript: changeText(7);">
+    <button id="myBtn7" class="anybutton" style="width:7%; height:3.5%; top: 45.5%; left:54%">CLOUDFIELD</button>
+</a>
+<a href="javascript: changeText(8);">
+    <button id="myBtn8" class="anybutton" style="width:8%; height:3%; top: 45%; left:80%">DARKSAGE</button>
+</a>
+<a href="javascript: changeText(9);">
+    <button id="myBtn9" class="anybutton" style="width:14.5%; height:2%; top: 57.5%; left:52%">GARENSWELL</button>
+</a>
+
+<a href="javascript: changeText(10);">
+    <button id="myBtn10" class="anybutton" style="width:10.5%; height:6%; top: 61.5%; left:20.5%">IFFIMORE</button>
+</a>
+<a href="javascript: changeText(11);">
+    <button id="myBtn11" class="anybutton" style="width:16%; height:4%; top: 72%; left:40%">EASTWATER</button>
+</a>
+<a href="javascript: changeText(12);">
+    <button id="myBtn12" class="anybutton" style="width:20%; height:3%; top: 68.5%; left:65%">AMBERPORT</button>
+</a>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id="locationTitle" style="font-family: 'Segoe UI','Helvetica Neue',Lato,Roboto,'PingFang SC','Microsoft YaHei',sans-serif;font-size: 10pt">Modal Header</h2>
+    </div>
+    <div id="description" class="modal-body" style="margin: 10px 16px; font-family: 'Segoe UI','Helvetica Neue',Lato,Roboto,'PingFang SC','Microsoft YaHei',sans-serif;font-size: 30%">
+      <p>Some text in the Modal Body</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function changeText(value) {
+    var div = document.getElementById("locationTitle");
+    var des = document.getElementById("description")
+    var text = "";
+    var description = "";
+    modal.style.display = "block";
+
+    if (value == 1){
+        text += "雪山 Snowy Mountains";
+        description = "| 泽罗尔的巢穴 |</br>在大陆的高山之巅，雪山矗立在苍穹之下，其险峻的峰巅被永恒的风雪所笼罩。</br>对喜好寒冷环境的银龙来说，常年风雪的高山是最适合筑巢的地方。";
+    }else if (value == 2){
+        text += "龙巢 Dragon's Lair";
+        description = "| 黄铜龙埃德加的巢穴 |</br>埃德加和他的蜥蜴人随从们栖息在坚硬的砂岩所组成的洞穴深处，黄铜龙可以通过他们最擅长的土系魔法操纵并改变巢穴的形态。";
+    }else if (value == 3){
+        text += "鸦岩城 Ravencliff";
+        description = "沙漠中依着绿洲所建造的城市，是与领国的重要交通枢纽。</br>老城主亡故后由他的女儿接任新城主。曾遭恶龙袭击，几乎被夷为平地，如今重建工程正在新城主的代理下展开……</br>详见【主线剧情-沙漠篇】</a>";
+    }else if (value == 4){
+        text += "奥瑟兰首都 Capital of Othealan";
+        description = "| 克尼亚王宫 | 奥瑟兰骑士团 | 太阳神教主教堂 | 左拉的故乡 |</br>奥瑟兰王国的政治鼎盛之地，蕴藏着深厚的历史和文化底蕴。</br>众多贵族定居于此，高贵的血统和显赫的家族背景构成了城市的主题，使得首都成为政治斗争、联姻交往和社会交际的中心。贵族们在这里交织着政治与利益，谋求着更高的地位和权力。</br>奥瑟兰首都也以其骑士团而闻名于世，这支久负盛名的武装力量守护着城市的治安和荣誉。";
+    }else if (value == 5){
+        text += "沼泽地 Swamps";
+        description = "| 蜥蜴人部落 |</br>一支蜥蜴人部族定居于此，他们已经形成了自己的社会与文化，目前正在寻找可以庇护他们强大力量。";
+    }else if (value == 6){
+        text += "阿克尼亚城 Alcognia";
+        description = "一座较为闭塞的小城，以其雄伟而坚固的堡垒城墙而闻名于世。</br>城市周围延伸的峻岭山脉和茂密的森林，使得阿克尼亚城成为了一个与世隔绝的天然堡垒，曾经拥有着难以逾越的防御之力。</br>然而，不久前这座城市却陷入了一片死一般的寂静。大规模的传染病在城内蔓延开来，让城市的居民们陷入了恐惧和绝望之中。迅速传播的疫情让城市的统治者不得不做出一个艰难的决定——封闭城门，隔绝与外界的联系，以阻止疫情的扩散。";
+    }else if (value == 7){
+        text += "云野镇 Cloudfield";
+        description = "| 斯嘉丽的故乡 |</br>这个被树木环绕的小镇仿佛是大自然的一部分，与茂密的森林相互融合，比起这里的居民，树木的数量似乎更多。</br>镇上的居民相信森林中存在着神秘的生物和魔法力量，许多人会在特定的时节前往森林进行祭祀和仪式，以祈求自然的庇佑和守护。</br>森林里蕴藏着珍贵的草药、稀有的动植物以及许多未知的秘密，吸引着来自各地的冒险者和学者前来探索。";
+    }else if (value == 8){
+        text += "黑圣城 Darksage";
+        description = "这座城市自古以来就被誉为众神之地，据传曾多次迎来众多圣人的莅临，为这片土地增添了无尽的神秘和崇高。</br>尽管黑圣城以宗教城市为名，但城内并没有统一的宗教体系。相反，各种各样的宗教信仰在这里和谐共存，形成了一个充满包容和多元文化的社会。居民们信仰着不同的神灵，践行着不同的仪式，却和平地生活在这座城市中，彼此尊重并互相包容。</br>每年，来自世界各地的朝圣者和信徒都会前往黑圣城，追寻着心灵的宁静和神秘的启示。";
+    }else if (value == 9){
+        text += "加仑之井 Garenswell";
+        description = "加仑之井以其丰富的魔法资源而闻名，魔法在这里融入了生活的方方面面。</br>然而，城市里也时常弥漫着一股危险的气息。魔法生物和妖怪们在夜晚出没，各种神秘的诅咒和陷阱也隐藏在城市的角落。";
+    }else if (value == 10){
+        text += "伊菲摩尔巫术学院 Iffimore Witchery Academy";
+        description = "| 奥加和伊伦就任的学校 |</br>伊菲摩尔巫术学院以其卓越的魔法研究和教学而闻名于世。学院里有着一流的魔法图书馆，收藏着珍贵的魔法文献和古老的卷轴，为学员们提供了广阔的学术资源。</br>然而，一些人认为学院在研究魔法的过程中涉足了禁忌领域，甚至传闻有些邪恶势力在其中作祟。</br>但无论如何，伊菲摩尔巫术学院始终是一个神秘而引人向往的地方，吸引着来自世界各地的学子前来追求魔法的真谛。";
+    }else if (value == 11){
+        text += "东水城 Eastwater";
+        description = "| 无酩之月小队据点 | 泽罗尔的商店 | 屠鹿酒馆 |</br> 东水城坐落于壮丽的山脉之间。尽管不算太大，但这座城市却因其独特的地理位置和温馨的氛围，成为了许多冒险者们的欢迎之地，一个他们歇脚、交流和休整的避风港。";
+    }else if (value == 12){
+        text += "琥珀港 Amberport";
+        description = "| 银龙家 |</br>琥珀港位于广袤海岸线之上，散发着繁荣的光辉。这座城市作为奥瑟兰的主要港口和贸易中心，以其独特的地理位置和繁华的商业活动而声名远扬。</br>琥珀港的居民来自各地，繁多的种族和文化在这里交汇融合，形成了多彩多姿的社会风貌。</br>而在琥珀港的深处，还隐藏着不为人知的秘密。";
+    }
+
+    div.innerHTML = text;
+    des.innerHTML = description;
+
+}
+</script>
+
+</body>
+</html>
